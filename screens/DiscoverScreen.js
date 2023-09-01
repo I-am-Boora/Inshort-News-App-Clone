@@ -11,7 +11,6 @@ import React, { useContext } from "react";
 import { categories, sources } from "../API/api";
 import { NewsContext } from "../API/context";
 import Carousel from "react-native-snap-carousel";
-import Search from "../component/Search";
 
 const DiscoverScreen = () => {
   const { setCategory, setSource } = useContext(NewsContext);
@@ -42,6 +41,7 @@ const DiscoverScreen = () => {
           <TouchableOpacity
             style={styles.category}
             onPress={() => setCategory(item.name)}
+            key={index}
           >
             <Image source={{ uri: item.pic }} style={styles.categoryImage} />
             <Text style={{ ...styles.name, color: "white" }}>{item.name}</Text>
